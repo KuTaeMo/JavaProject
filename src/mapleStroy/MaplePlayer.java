@@ -20,12 +20,12 @@ public class MaplePlayer extends JLabel {
    public int floor = 1; // 535, 415, 295, 177
 
    public MaplePlayer() {
-      icPlayerR = new ImageIcon("image/fuck.png");
-      icPlayerL = new ImageIcon("image/playerL.png");
-      icPlayerJ = new ImageIcon("image/jump.png");
-      icPlayerW = new ImageIcon("image/walking.png");
-      icPlayerS = new ImageIcon("image/stop.png");
-      icPlayerW2 = new ImageIcon("image/walking2.png");
+      icPlayerR = new ImageIcon("image/imgStayR.png");
+      icPlayerL = new ImageIcon("image/imgStayL.png");
+      icPlayerJ = new ImageIcon("image/imgJumpR.png");
+      icPlayerW = new ImageIcon("image/imgWalkR1.png");
+      icPlayerS = new ImageIcon("image/imgStayL.png");
+      icPlayerW2 = new ImageIcon("image/imgWalkR2.png");
       setIcon(icPlayerS);
       setSize(100, 100);
       setLocation(x, y);
