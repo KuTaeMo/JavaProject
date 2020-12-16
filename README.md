@@ -9,6 +9,8 @@
 
 <img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="600" height="370">
 
+
+ - 나혜야 
 <div>
 	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro1.png?raw=true"  width="600" height="370">	
 	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro2.png?raw=true"  width="600" height="370">
