@@ -14,7 +14,7 @@
  
  - 시작 화면
  <div>
-	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_172.png?raw=true"  width="400" height="370">	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_173.png?raw=true"  width="400" height="370">	
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_172.png?raw=true"  width="400" height="370">      <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_173.png?raw=true"  width="400" height="370">	
 </div>
 
 - 로그인 화면
