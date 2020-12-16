@@ -10,13 +10,44 @@
 <img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="600" height="370">
 
 
- - 실제 구현한 모습
+ ## 실제 구현한 모습
  
-<div>
-	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro1.png?raw=true"  width="600" height="370">	
-	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro2.png?raw=true"  width="600" height="370">
+ - 시작 화면
+ <div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_172.png?raw=true"  width="450" height="370"> <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_173.png?raw=true"  width="450" height="370">	
 </div>
+<br>
 
+- 로그인 화면
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_174.png?raw=true"  width="450" height="370">
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_175.png?raw=true"  width="450" height="370">
+</div>
+<br>
+
+- 실행 화면
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_176.png?raw=true"  width="600" height="370">
+</div>
+<br>
+
+- 공격 및 스킬
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_178.png?raw=true"  width="450" height="370"> <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_177.png?raw=true"  width="450" height="370">
+</div>
+<br>
+
+- 보스
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_179.png?raw=true"  width="450" height="370"> <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_180.png?raw=true"  width="450" height="370">
+</div>
+<br>
+
+- 죽음
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_181.png?raw=true"  width="600" height="370">
+</div>
+<br>
 
 ## 설치 및 실행
 1. 설치
