@@ -61,7 +61,7 @@ public class LoginScr extends JFrame {
       setSize(1280,720);
 
       initListener();
-      
+      setLocationRelativeTo(null);
       setVisible(true);
    }
 

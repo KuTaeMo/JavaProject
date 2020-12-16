@@ -97,11 +97,12 @@ public class Skill extends JLabel {
 			} catch (Exception e) {
 			}
             System.out.println("스킬 적중!");
+            MapleApp.deadEnemy[2] += 10;
             this.isSkill = false;
             setIcon(null);
             enemy.get(i).hp -= 20;
             System.out.println(enemy.get(i).name + " hp :" + enemy.get(i).hp);
-            if (enemy.get(i).hp == 0) {
+            if (enemy.get(i).hp <= 0) {
                System.out.println(enemy.get(i).name + " 죽음...");
                enemy.get(i).x = 99999;
 

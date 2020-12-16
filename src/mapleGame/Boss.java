@@ -18,7 +18,7 @@ public class Boss extends Enemy {
       this.hp = hp;
       
       setIcon(enemyMove);
-      setSize(850, 700);
+      setSize(730, 700);
       setLocation(x, y);
 
    }

@@ -12,10 +12,13 @@ public class Loading extends JFrame   {
    
    public Loading() {
       la=new JLabel();
+     
       icon=new ImageIcon("image/gamestart.gif");
       la.setIcon(icon);
+      
       add(la);
       setSize(icon.getIconWidth(),icon.getIconHeight());
+      setLocationRelativeTo(null);
       
       new Thread(new Runnable() {
          

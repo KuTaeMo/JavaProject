@@ -40,10 +40,10 @@ public class MapleApp extends JFrame implements Initable {
 
 	boolean isBoss = false;
 	boolean isBossStart = true;
-	
-	// 로그인 
+
+	// 로그인
 	LoginScr loginScr;
-	
+
 	Container c;
 	Skill skillShot;
 
@@ -52,6 +52,14 @@ public class MapleApp extends JFrame implements Initable {
 	// MP 라벨
 	ImageIcon icMp0, icMp10, icMp20, icMp30, icMp40, icMp50;
 
+	public MapleApp() {
+		init(); // new
+		setting();
+		batch();
+		listener();
+
+		setVisible(true); // 마지막 고정
+	}
 	public MapleApp(LoginScr loginScr) {
 		init(); // new
 		setting();
@@ -62,7 +70,7 @@ public class MapleApp extends JFrame implements Initable {
 	}
 
 	public static void main(String[] args) {
-
+		new MapleApp();
 	}
 
 	@Override
@@ -93,14 +101,12 @@ public class MapleApp extends JFrame implements Initable {
 
 		player = new Player();
 
-		mushroom = new Mushroom("image/주황버섯오른쪽.gif", 555, 380, 60, "주황버섯");
-		stone = new Stone("image/Stone.gif", 100, 150, 20, "스톤골렘");
-		barlog = new Barlog("image/발록오른쪽.gif", 200, -20, 20, "주니어발록");
-		block = new Block("image/블록골렘오른쪽.gif", 200, 300, 60, "블록골렘");
-		
-		boss = new Boss("image/자쿰.gif", 300, 20, 400, "자쿰");
+		mushroom = new Mushroom("image/주황버섯오른쪽.gif", 555, 380, 30, "주황버섯");
+		stone = new Stone("image/Stone.gif", 100, 150, 30, "스톤골렘");
+		barlog = new Barlog("image/발록오른쪽.gif", 200, -20, 30, "주니어발록");
+		block = new Block("image/블록골렘오른쪽.gif", 200, 300, 30, "블록골렘");
+		boss = new Boss("image/자쿰.gif", 300, 20, 800, "자쿰");
 
-		
 		bar = new PlayerHpBar();
 		bar2 = new PlayerMpBar();
 		gamePoint = new GamePoint();
@@ -112,17 +118,9 @@ public class MapleApp extends JFrame implements Initable {
 		enemy.add(boss);
 
 		player.healing();
-	
-		Thread mushCol = new Thread(new col(mushroom));
-		mushCol.start();
-		Thread stoneCol = new Thread(new col(stone));
-		stoneCol.start();
-		Thread balCol = new Thread(new col(barlog));
-		balCol.start();
-		Thread iceCol = new Thread(new col(block));
-		iceCol.start();
-		Thread bossCol = new Thread(new col(boss));
-		bossCol.start();
+
+		Thread enemyCol = new Thread(new col(enemy));
+		enemyCol.start();
 		boss.x = 9999;
 	}
 
@@ -131,6 +129,7 @@ public class MapleApp extends JFrame implements Initable {
 		setTitle("메이플 테스트");
 		setSize(1290, 759);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setLayout(null);
 		setContentPane(laBackground);
 	}
@@ -194,150 +193,157 @@ public class MapleApp extends JFrame implements Initable {
 
 	// 충돌 클래스
 	class col extends Thread {
-		Enemy enemy;
+		ArrayList<Enemy> enemy;
 
-		public col(Enemy enemy) {
+		public col(ArrayList<Enemy> enemy) {
 			this.enemy = enemy;
 		}
 
 		@Override
 		public void run() {
 			while (true) {
+
 				try {
-					Thread.sleep(10);
-					if (enemy == boss && enemy.hp < 380) {
-						enemy.setIcon(new ImageIcon("image/자쿰개피.gif"));
-						enemy.y = enemy.y + 30;
-						enemy.x = enemy.x + 50;
-					}
-					// 보스
-					if (isBossStart == true) {
-		                  if (deadEnemy[2] > 50) {   // 설정한 점수 이상이면 보스맵 입장
-		                     isBoss = true;
-		                  }
-
-		                  if (isBoss == true) {
-
-		                      //int result = JOptionPane.showConfirmDialog(null, "보스룸입장!", "안내메세지", JOptionPane.OK_OPTION);
-		                     Thread.sleep(3100);
-		                     laBackground.setIcon(new ImageIcon("image/자쿰의제단.png"));
-		                     
-		                     mushroom.x = 99999;
-		                     stone.x = 99999;
-		                     block.x = 99999;
-		                     barlog.x = 99999;
-		                     c.remove(block);
-		                     c.remove(stone);
-		                     c.remove(mushroom);
-		                     c.remove(barlog);
-
-		                     add(boss);
-
-		                     boss.x = 400;
-
-		                     isBossStart = false;
-		                     isBoss = false;
-		                     player.y = 500;
-		                     System.out.println("실행됨??");
-		                  }
-		               } //
-
-					if (player.hp == 100) {
-						bar.setIcon(icHp100);
-					} else if (player.hp < 100 && player.hp >= 90) {
-						bar.setIcon(icHp90);
-					} else if (player.hp < 90 && player.hp >= 80) {
-						bar.setIcon(icHp80);
-					} else if (player.hp < 80 && player.hp >= 70) {
-						bar.setIcon(icHp70);
-					} else if (player.hp < 70 && player.hp >= 60) {
-						bar.setIcon(icHp60);
-					} else if (player.hp < 60 && player.hp >= 50) {
-						bar.setIcon(icHp50);
-					} else if (player.hp < 50 && player.hp >= 40) {
-						bar.setIcon(icHp40);
-					} else if (player.hp < 40 && player.hp >= 30) {
-						bar.setIcon(icHp30);
-					} else if (player.hp < 3 && player.hp >= 20) {
-						bar.setIcon(icHp20);
-					} else if (player.hp < 20 && player.hp >= 10) {
-						bar.setIcon(icHp10);
-					}
-
-					if (player.mp == 50) {
-						bar2.setIcon(icMp50);
-					} else if (player.mp < 50 && player.mp >= 40) {
-						bar2.setIcon(icMp40);
-					} else if (player.mp < 40 && player.mp >= 30) {
-						bar2.setIcon(icMp30);
-					} else if (player.mp < 30 && player.mp >= 20) {
-						bar2.setIcon(icMp20);
-					} else if (player.mp < 20 && player.mp >= 10) {
-						bar2.setIcon(icMp10);
-					} else if (player.mp < 10 && player.mp >= 0) {
-						bar2.setIcon(icMp0);
-					}
-
-					gamePoint.setText("Point : " + MapleApp.deadEnemy[2]); // 점수 표시
-
-					// 플레이어
-					if (crash(player.x, player.y, enemy.x, enemy.y, player.width, player.height, enemy.width,
-							enemy.height)) {
-						System.out.println("충돌 발생!");
-						Thread.sleep(1500);
-						player.hp = player.hp - 10;
-						System.out.println("플레이어 hp : " + player.hp + " 남았습니다.");
-
-						if (player.hp <= 0) {
-							player.dieDown();
-							int result = JOptionPane.showConfirmDialog(null, "죽었네... 점수는" + MapleApp.deadEnemy[2] + "점 입니다.", "안내메세지", JOptionPane.OK_OPTION);
-							if (result == JOptionPane.OK_OPTION) {
-								System.exit(0);
+					for (int i = 0; i < enemy.size(); i++) {
+						Thread.sleep(10);
+						if (enemy.get(i) instanceof Boss && enemy.get(i).hp < 380) {
+							enemy.get(i).setIcon(new ImageIcon("image/자쿰개피.gif"));
+							enemy.get(i).y = enemy.get(i).y + 30;
+							enemy.get(i).x = enemy.get(i).x + 50;
+						}
+						// 보스
+						if (isBossStart == true) {
+							if (deadEnemy[2] > 170) { // 설정한 점수 이상이면 보스맵 입장
+								isBoss = true;
 							}
+
+							if (isBoss == true) {
+
+								// int result = JOptionPane.showConfirmDialog(null, "보스룸입장!", "안내메세지",
+								// JOptionPane.OK_OPTION);
+								Thread.sleep(3100);
+								laBackground.setIcon(new ImageIcon("image/자쿰의제단.png"));
+
+								mushroom.x = 99999;
+								stone.x = 99999;
+								block.x = 99999;
+								barlog.x = 99999;
+								c.remove(block);
+								c.remove(stone);
+								c.remove(mushroom);
+								c.remove(barlog);
+
+								add(boss);
+
+								boss.x = 400;
+
+								isBossStart = false;
+								isBoss = false;
+								player.y = 500;
+								System.out.println("실행됨??");
+							}
+						} //
+
+						if (player.hp == 100) {
+							bar.setIcon(icHp100);
+						} else if (player.hp < 100 && player.hp >= 90) {
+							bar.setIcon(icHp90);
+						} else if (player.hp < 90 && player.hp >= 80) {
+							bar.setIcon(icHp80);
+						} else if (player.hp < 80 && player.hp >= 70) {
+							bar.setIcon(icHp70);
+						} else if (player.hp < 70 && player.hp >= 60) {
+							bar.setIcon(icHp60);
+						} else if (player.hp < 60 && player.hp >= 50) {
+							bar.setIcon(icHp50);
+						} else if (player.hp < 50 && player.hp >= 40) {
+							bar.setIcon(icHp40);
+						} else if (player.hp < 40 && player.hp >= 30) {
+							bar.setIcon(icHp30);
+						} else if (player.hp < 3 && player.hp >= 20) {
+							bar.setIcon(icHp20);
+						} else if (player.hp < 20 && player.hp >= 10) {
+							bar.setIcon(icHp10);
 						}
 
-					}
-					// 기본공격
-					if (attackCrash(player.x, player.y, enemy.x, enemy.y, player.width, player.height, enemy.width,
-							enemy.height)) {
+						if (player.mp == 50) {
+							bar2.setIcon(icMp50);
+						} else if (player.mp < 50 && player.mp >= 40) {
+							bar2.setIcon(icMp40);
+						} else if (player.mp < 40 && player.mp >= 30) {
+							bar2.setIcon(icMp30);
+						} else if (player.mp < 30 && player.mp >= 20) {
+							bar2.setIcon(icMp20);
+						} else if (player.mp < 20 && player.mp >= 10) {
+							bar2.setIcon(icMp10);
+						} else if (player.mp < 10 && player.mp >= 0) {
+							bar2.setIcon(icMp0);
+						}
+
+						gamePoint.setText("Point : " + MapleApp.deadEnemy[2]); // 점수 표시
+
+						// 플레이어
+						if (crash(player.x, player.y, enemy.get(i).x, enemy.get(i).y, player.width, player.height,
+								enemy.get(i).width, enemy.get(i).height)) {
+							System.out.println("충돌 발생!");
+							Thread.sleep(1500);
+							player.hp = player.hp - 10;
+							System.out.println("플레이어 hp : " + player.hp + " 남았습니다.");
+
+							if (player.hp <= 0) {
+								player.dieDown();
+								int result = JOptionPane.showConfirmDialog(null,
+										"죽었네... 점수는 " + MapleApp.deadEnemy[2] + "점 입니다.", "안내메세지",
+										JOptionPane.OK_OPTION);
+								if (result == JOptionPane.OK_OPTION) {
+									System.exit(0);
+								}
+							}
+
+						}
 						if (player.isAttack == true) {
-							System.out.println("기본공격 적중!");
-							enemy.moveState = 0;
-							Thread.sleep(1000);
-							enemy.hp = enemy.hp - 10;
-							System.out.println(" hp : " + enemy.hp);
+							// 기본공격
+							if (attackCrash(player.x, player.y, enemy.get(i).x, enemy.get(i).y, player.width,
+									player.height, enemy.get(i).width, enemy.get(i).height)) {
+								if (player.isAttack == true) {
+									System.out.println("기본공격 적중!");
+									deadEnemy[2] += 5;
+									enemy.get(i).moveState = 0;
+									Thread.sleep(1000);
+									enemy.get(i).hp = enemy.get(i).hp - 10;
+									System.out.println(" hp : " + enemy.get(i).hp);
 
-							if (enemy.hp <= 0) {
-								System.out.println(enemy.name + " 죽음...");
-								score(enemy.name); // 점수 계산
-								gamePoint.setText("Point : " + deadEnemy[2]); // 점수 표시
-								enemy.x = 999999;
-								Thread.sleep(3000);
-								if (enemy == mushroom) {
-									enemy.x = 550;
-									enemy.hp = 20;
+									if (enemy.get(i).hp <= 0) {
+										System.out.println(enemy.get(i).name + " 죽음...");
+										score(enemy.get(i).name); // 점수 계산
+										gamePoint.setText("Point : " + deadEnemy[2]); // 점수 표시
+										enemy.get(i).x = 999999;
+										Thread.sleep(3000);
+										if (enemy.get(i) instanceof Mushroom) {
+											enemy.get(i).x = 550;
+											enemy.get(i).hp = 20;
+
+										}
+
+										if (enemy.get(i) instanceof Stone) {
+											enemy.get(i).x = 100;
+											enemy.get(i).hp = 20;
+										}
+										if (enemy.get(i) instanceof Barlog) {
+											enemy.get(i).x = 200;
+											enemy.get(i).hp = 20;
+										}
+										if (enemy.get(i) instanceof Block) {
+											enemy.get(i).x = 200;
+											enemy.get(i).hp = 20;
+										}
+									}
 
 								}
 
-								if (enemy == stone) {
-									enemy.x = 100;
-									enemy.hp = 20;
-								}
-								if (enemy == barlog) {
-									enemy.x = 200;
-									enemy.hp = 20;
-								}
-								if (enemy == block) {
-									enemy.x = 200;
-									enemy.hp = 20;
-								}
 							}
-
 						}
-
 					}
-
-//					
 
 				} catch (Exception e) {
 					e.getMessage();
@@ -362,6 +368,7 @@ public class MapleApp extends JFrame implements Initable {
 	// end 충돌
 
 	// 몬스터 공격 함수
+
 	public boolean attackCrash(int playerX, int playerY, int enemyX, int enemyY, int playerW, int playerH, int enemyW,
 			int enemyH) {
 		boolean check = false;
