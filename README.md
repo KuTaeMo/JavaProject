@@ -10,7 +10,17 @@
 <img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="600" height="370">
 
 
- - 실제 구현한 모습
+ ## 실제 구현한 모습
+ 
+ - 시작 화면
+ <div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_172.png?raw=true"  width="600" height="370">	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_173.png?raw=true"  width="600" height="370">	
+</div>
+
+- 로그인 화면
+<div>
+		
+</div>
  
 <div>
 	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro1.png?raw=true"  width="600" height="370">	
