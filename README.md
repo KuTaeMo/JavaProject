@@ -14,19 +14,34 @@
  
  - 시작 화면
  <div>
-	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_172.png?raw=true"  width="400" height="370">      <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_173.png?raw=true"  width="400" height="370">	
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_172.png?raw=true"  width="400" height="370"> <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_173.png?raw=true"  width="400" height="370">	
 </div>
 
 - 로그인 화면
 <div>
-		
-</div>
- 
-<div>
-	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro1.png?raw=true"  width="600" height="370">	
-	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro2.png?raw=true"  width="600" height="370">
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_174.png?raw=true"  width="400" height="370">
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_175.png?raw=true"  width="400" height="370">
 </div>
 
+- 실행 화면
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_176.png?raw=true"  width="600" height="370">
+</div>
+
+- 공격 및 스킬
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_178.png?raw=true"  width="400" height="370"> <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_177.png?raw=true"  width="400" height="370">
+</div>
+
+- 보스
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_179.png?raw=true"  width="400" height="370"> <img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_180.png?raw=true"  width="400" height="370">
+</div>
+
+- 죽음
+<div>
+	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/Screenshot_181.png?raw=true"  width="600" height="370">
+</div>
 
 ## 설치 및 실행
 1. 설치
