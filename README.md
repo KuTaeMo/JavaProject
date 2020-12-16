@@ -10,11 +10,14 @@
 <img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="600" height="370">
 
 
- - 나혜야 
+ - 실제 구현한 모습
+ 
 <div>
 	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro1.png?raw=true"  width="600" height="370">	
 	<img src="https://github.com/KuTaeMo/JavaProject/blob/master/introImage/intro2.png?raw=true"  width="600" height="370">
 </div>
+
+
 ## 설치 및 실행
 1. 설치
  - SpringToolSuite4.exe툴을 사용하여 제작했으며, 위의 파일을 다운받아서 export하시면 되겠습니다.
