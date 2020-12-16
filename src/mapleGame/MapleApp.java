@@ -52,14 +52,14 @@ public class MapleApp extends JFrame implements Initable {
 	// MP 라벨
 	ImageIcon icMp0, icMp10, icMp20, icMp30, icMp40, icMp50;
 
-	public MapleApp() {
-		init(); // new
-		setting();
-		batch();
-		listener();
-
-		setVisible(true); // 마지막 고정
-	}
+//	public MapleApp() {
+//		init(); // new
+//		setting();
+//		batch();
+//		listener();
+//
+//		setVisible(true); // 마지막 고정
+//	}
 	public MapleApp(LoginScr loginScr) {
 		init(); // new
 		setting();
@@ -70,7 +70,7 @@ public class MapleApp extends JFrame implements Initable {
 	}
 
 	public static void main(String[] args) {
-		new MapleApp();
+//		new MapleApp();
 	}
 
 	@Override
