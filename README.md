@@ -2,13 +2,12 @@
   # 미니메이플스토리
  1. JAVA언어를 공부하면서 평소 좋아하던 게임을 만들자는 생각에 메이플스토리를 모티브삼아 프로젝트를 제작하게 되었습니다. 제작 기간은 3주정도 걸렸고 총 3명이 합작하여 만들었습니다
 
-Git-Hub주소 - 
-YouTube영상 -
+ - Git-Hub주소 - https://github.com/KuTaeMo/JavaProject/tree/master
 
 
-만들고 싶었던 것
-![그림1]()
-![그림2]()
+만들고 싶었던 모티브
+<img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="700" height="370">
+
 
 ## 설치 및 실행
 1. 설치
