@@ -38,6 +38,12 @@ public class Barlog extends Enemy {
                if(n % 5 == 0) {
                   speed = 200;
                   moveState = random.nextInt(3);
+                  try {
+						Thread.sleep(random.nextInt(3500)+2000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
                }
                speed = 5;   
             }   

@@ -19,6 +19,7 @@ abstract class Enemy extends JLabel {
    int hp;
    int width;
    int height;
+   boolean isMove = true;
    String name;
    Random random = new Random();
    Timer timer = new Timer();
