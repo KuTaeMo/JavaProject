@@ -22,7 +22,7 @@
 
  - [Player](#player)
  - [MapleApp](#mapleapp)
- - [LoginScr](#loginscr)
+ - [Loading](#loading)
  - [Enemy](#enemy)
  - [GamePoint](#gamepoint)
  - [Skill](#skill)
@@ -79,7 +79,7 @@ public void moveRight1() {
 	}
 ```
   
-## LoginScr
+## Loading
  - 게임이 시작전 인트로 역할 (비밀번호 : maple)
 
 ## Enemy
