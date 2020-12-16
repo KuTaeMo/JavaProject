@@ -5,8 +5,9 @@
  - Git-Hub주소 - https://github.com/KuTaeMo/JavaProject/tree/master
 
 
-만들고 싶었던 모티브
-<img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="700" height="370">
+ - 만들고 싶었던 모티브
+
+<img src="https://blog.kakaocdn.net/dn/nHNsc/btqCy4ZVqWE/5SY5SCDtkc7TNQnu7N2G30/img.png"  width="600" height="370">
 
 
 ## 설치 및 실행
@@ -64,8 +65,7 @@ public void moveRight1() {
  - 게임이 실행되는 틀 JFrame 여기에서 게임이 진행. 공격했을때의 충돌을 검사하는 메소드나, 다른 모든 객체를 생성, HP,MP검사등을 함. 마찬가지로 Thread사용이 많아 잦은 렉이 발생
  중요 코드로는 플레이어와 몬스터 간 거리를 계산하여 충돌을 검사하는 메소드가 존재
  
- ''' JAVA
- 
+``` JAVA
 	public boolean crash(int playerX, int playerY, int enemyX, int enemyY, int playerW, int playerH, int enemyW,
 			int enemyH) {
 		boolean check = false;
@@ -77,7 +77,7 @@ public void moveRight1() {
 		}
 		return check;
 	}
-  '''
+```
   
 ## LoginScr
  - 게임이 시작전 인트로 역할 (비밀번호 : maple)
@@ -86,7 +86,7 @@ public void moveRight1() {
  - 몬스터들이 상속해야하는 JLable 추상클래스 나머지 몬스터들은 이 클래스 형식에 맞춰서 제작
  상속 받는 행위, 상태
  
- ''' JAVA
+``` JAVA
  
 	Enemy enemy = this;
 	ImageIcon enemyMove;
@@ -102,9 +102,9 @@ public void moveRight1() {
 	String name;
 	Random random = new Random();
 	Timer timer = new Timer();
- '''
+```
  
- ''' JAVA
+``` JAVA
  
 	public Enemy() {
 		
@@ -118,7 +118,7 @@ public void moveRight1() {
 	public void moveDirection() {
 		
 	}
- '''
+```
  
 ## GamePoint
  - 게임이 시작하고 몬스터를 처치함에 따라 올라가는 포인트 점수, 일정 포인트 이상으로 오르면 보스룸 입장
@@ -127,25 +127,24 @@ public void moveRight1() {
  - 스킬을 사용했을때 나오는 스킬 JLabel 스킬또한 하나의 객체로 인식하여 몬스터간 거리를 계산, 충돌하는 클래스
 스킬 클래스의 메소드 일부 움직임은 플레이어의 이동과 비슷
 
-''' JAVA
-
-	 public void Col(ArrayList<Enemy> enemy) {
-	      for (int i = 0; i < enemy.size(); i++) {
-		 if (crash(this.x, this.y, enemy.get(i).x, enemy.get(i).y, this.width, this.height, enemy.get(i).width,
-		       enemy.get(i).height)) {
-		    System.out.println("스킬 적중!");
-		    this.isSkill = false;
-		    setIcon(null);
-		    enemy.get(i).hp -= 20;
-		    System.out.println(enemy.get(i).name + " hp :" + enemy.get(i).hp);
-'''
+``` JAVA
+ public void Col(ArrayList<Enemy> enemy) {
+      for (int i = 0; i < enemy.size(); i++) {
+	 if (crash(this.x, this.y, enemy.get(i).x, enemy.get(i).y, this.width, this.height, enemy.get(i).width,
+	       enemy.get(i).height)) {
+	    System.out.println("스킬 적중!");
+	    this.isSkill = false;
+	    setIcon(null);
+	    enemy.get(i).hp -= 20;
+	    System.out.println(enemy.get(i).name + " hp :" + enemy.get(i).hp);
+```
         
 ## Enemy클래스를 상속받는 몬스터클래스
   - 머쉬맘, 스톤골렘, 발록등의 몬스터가 존재하며 Enemy클래스를 상속받는 클래스
   랜덤하게 움직여야 하기 때문에 움직임을 랜덤하게 동작하는 행위가 존재
   - 현재 시간값을 사용하여 변칙적인 행동을 가능하게 함
   
-  ''' JAVA
+``` JAVA
   
  	 public void moveChange() {
 		new Thread(new Runnable() {
@@ -163,7 +162,7 @@ public void moveRight1() {
 			}
 		}).start();
 	}
-  '''
+```
 
 ## 만들어본 후기
  - 무슨 게임을 할지 생각하다가 예전에 존재했던 주니어네이버의 메이플스토리 미니게임이 생각이 나서 만들어 보았다. 각 객체들을 따로따로 움직이게 해야하고 움직임에대한 모션, 충돌같은 검사 같은 요소들이 생각만큼 쉽지 않았다. 하지만 3명이서 각각 역할을 나누어 제작하다보니 혼자서 프로젝트를 진행 했을때 보다 안정적이고 빠르게 제작할 수 있었다. 자바 언어로 게임을 만든게 처음이라 많이 부족하지만 개발자로서의 큰 한걸음이 되었음을 느낀다.
